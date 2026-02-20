@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Alert, Button, Input } from "antd";
-import { CloseOutlined } from "@ant-design/icons";
+import {Alert, Button, Input} from "antd";
+import {CloseOutlined} from "@ant-design/icons";
 
 export default function App() {
   //Массив тасков
@@ -64,6 +64,7 @@ export default function App() {
       )}
 
       <Input
+        maxLength="30"
         placeholder={
           value.length >= maxTask
             ? `Лимит ${maxTask} задач достигнут`
@@ -91,9 +92,9 @@ export default function App() {
               key={index}
               className="flex justify-between items-center py-2 px-3 bg-[#f5f5f5] rounded-lg font-medium"
             >
-              <p className="text-[12px] first-letter:uppercase">{task}</p>
+              <p className="text-[12px] first-letter:uppercase text-limit">{task}</p>
               <span
-                className="transition duration-300 ease hover:text-[#B22222]"
+                className="transition duration-300 ease hover:text-[#B22222] cursor-pointer"
                 onClick={() => deleteTask(index)}
               >
                 <CloseOutlined />
